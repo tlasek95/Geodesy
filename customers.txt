@@ -1,5 +1,0 @@
-ID	companyName	email	mobile	address	postal code	city	coopstartDate	noOfJobsGiven
-1	FonBUD	fonbud@gmail.com	789456789	Wroc³awska 52	60-423	Trzebnica	2013-07-20	126
-2	BUDIMEL	budimex@gmail.com	700591111	Grochowa 31/2	50-333	Wroc³aw	2014-11-11	30
-3	TELTENIC	teltech@gmail.com	705333000	Strzegomska 130	51-005	Wroc³aw	2018-01-09	11
-4	KOSDEVELOPER	kosdeveloper@o2.pl	704400099	Brzeska 17/6	40-055	D³ugo³êka	2020-05-07	5
