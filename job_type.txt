@@ -1,9 +1,0 @@
-ID	jobType	price	countMethod
-1	MDCP	500	hektar
-2	tyczenie przewodu do 100m	500	sta³a wartoœæ
-3	tyczenie przewodu > 100m	100	100m
-4	pomiar powykonawczy przewodu do 100m	500	sta³a wartoœæ
-5	pomiar powykonawczy przewodu > 100m	100	100m
-6	tyczenie domku	100	oœ
-7	pomiar powykonawczy domku	1500	sta³a wartoœæ
-8	podzia³ dzia³ki	2100	sta³a wartoœæ
