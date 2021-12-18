@@ -1,0 +1,7 @@
+ID	name
+1	Miasto Wroc³aw
+2	wroc³awski
+3	oleœnicki
+4	o³awski
+5	strzeliñski
+6	trzebnicki
