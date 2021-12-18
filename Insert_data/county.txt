@@ -1,0 +1,7 @@
+ID	name
+1	Miasto Wrocław
+2	wrocławski
+3	oleśnicki
+4	oławski
+5	strzeliński
+6	trzebnicki
