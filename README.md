@@ -7,4 +7,5 @@ tworzenie_wypelnienieBD.sql - skrypt tworzący całą bazę danych oraz wypełni
 
 przykladowe_zapytania.sql - skrypt zawierający przykładowe zapytania służące do wyświetlania różnych danych z bazy.
 
+W folderze Insert_data:
 borough.txt, county.txt, customers.txt, district.txt, employees.txt, job_assignments.txt, job_type.txt, jobs.txt, payments.txt - pliki tekstowe zawierające przykładowe dane importowane do bazy danych przez BULK INSERT
