@@ -1,0 +1,776 @@
+ID	name	boroughID
+1	Stare Miasto	1
+2	Bartoszowice	1
+3	Biskupin	1
+4	D鉉ie	1
+5	Plac Grunwaldzki	1
+6	S瘼olno	1
+7	Zacisze	1
+8	Zalesie	1
+9	Bie鎥owice	1
+10	Bierdzany	1
+11	Borek	1
+12	Broch闚	1
+13	Gaj	1
+14	Jagodno	1
+15	Klecina	1
+16	Krzyki	1
+17	Ksi篹e Ma貫	1
+18	Ksi篹e Wielkie	1
+19	O速aszyn	1
+20	Opatowice	1
+21	Partynice	1
+22	Po逝dnie	1
+23	Rakowiec	1
+24	i靖niki	1
+25	Tarnogaj	1
+26	Wojszyce	1
+27	G鉅闚 Ma造	1
+28	Grabiszyn	1
+29	Jarno速闚	1
+30	Jerzmanowo	1
+31	Kozan闚	1
+32	Kuiki	1
+33	Leica	1
+34	Marszowice	1
+35	Maice	1
+36	Mokra	1
+37	Muchob鏎 Ma造	1
+38	Muchob鏎 Wielki	1
+39	Nowy Dw鏎	1
+40	Opor闚	1
+41	Pilczyce	1
+42	Popowice	1
+43	Pracze Odrza雟kie	1
+44	Raty�	1
+45	Stab這wice	1
+46	Strachowice	1
+47	Z這tniki	1
+48	畝r	1
+49	疾rniki	1
+50	Kar這wice	1
+51	Kleczk闚	1
+52	K這koczyce	1
+53	Kowale	1
+54	Lipa Piotrowska	1
+55	Osobowice	1
+56	Paw這wice	1
+57	Polanowice	1
+58	Poi皻ne	1
+59	Psie Pole	1
+60	R璠zin	1
+61	R騜anka	1
+62	So速ysowice	1
+63	Strachocin	1
+64	Swojczyce	1
+65	iniary	1
+66	Widawa	1
+67	Wojn闚	1
+68	Zakrz闚	1
+69	B隕闚	2
+70	Bielawa	2
+71	Bierzyce	2
+72	Borowa	2
+73	Brzezia ㄨka	2
+74	Budziwojowice	2
+75	Bukowina	2
+76	Byk闚	2
+77	D鉉rowica	2
+78	D逝go喚ka	2
+79	Dobrosz闚	2
+80	Domaszczyn	2
+81	Godzieszowa	2
+82	Jaksonowice	2
+83	Januszkowice	2
+84	Ska豉	2
+85	Kamie�	2
+86	K靖na	2
+87	K瘼a	2
+88	Kie販z闚	2
+89	Kie販z闚ek	2
+90	Krakowiany	2
+91	υsice	2
+92	υzina	2
+93	Micha這wice gm.D逝go喚ka	2
+94	Mirk闚	2
+95	Oleiczka	2
+96	Pasikurowice	2
+97	Piecowice	2
+98	Pietrzykowice	2
+99	Pruszowice	2
+100	Rak闚	2
+101	Ramisz闚	2
+102	Siedlec	2
+103	St瘼in	2
+104	Szczodre	2
+105	iwice	2
+106	Tokary	2
+107	W璕r闚	2
+108	Wilczyce	2
+109	Zapr篹yn	2
+110	Chrz零tawa Ma豉	3
+111	Chrz零tawa Wielka	3
+112	Czernica	3
+113	Dobrzykowice	3
+114	Gajk闚	3
+115	Jeszkowice	3
+116	Kamieniec Wroc�.	3
+117	Krzyk闚	3
+118	ζny	3
+119	Nadolice Ma貫	3
+120	Nadolice Wielkie	3
+121	Ratowice	3
+122	Wojnowice	3
+123	Biskupice	4
+124	Dankowice	4
+125	Glinica	4
+126	Jan闚ek	4
+127	Jezierzyce Wielkie	4
+128	Jordan闚 零ki	4
+129	Mleczna	4
+130	Piotr闚ek	4
+131	Popowice	4
+132	Po瘸rzyce	4
+133	Tomice	4
+134	Wilczkowice	4
+135	Winna G鏎a	4
+136	Borzygniew	5
+137	Chwa堯w	5
+138	Domanice	5
+139	Dzikowa	5
+140	Mani闚 Wielki	5
+141	Mani闚 Mani闚 Ma造	5
+142	Mietk闚	5
+143	Milin	5
+144	Pi豉wa	5
+145	Proszkowice	5
+146	Str騜a	5
+147	Uj闚	5
+148	Wawrze鎍zyce	5
+149	Baranowice	6
+150	Cesarzowice	6
+151	Czer鎍zyce	6
+152	G鉅闚-Jaszkotle	6
+153	Gniechowice	6
+154	G鏎zyce	6
+155	Kamionna	6
+156	K瑿這wice	6
+157	Kilian闚-Szyman闚	6
+158	Koz堯w	6
+159	Krobielowice	6
+160	Krzept闚	6
+161	Ma趾owice	6
+162	Mokronos Dolny	6
+163	Mokronos G鏎ny	6
+164	Nowa Wie� Wroc豉wska	6
+165	Nowa Wie� K鉍ka	6
+166	Pe販znica	6
+167	Pietrzykowice-Rybnica	6
+168	Romn闚	6
+169	Sadk闚	6
+170	Sadowice	6
+171	Samotw鏎	6
+172	Ska趾a	6
+173	Smolec	6
+174	Sokolniki	6
+175	Soica-R騜aniec	6
+176	Stoszyce	6
+177	Strzeganowice	6
+178	Wojtkowice	6
+179	Wszemi這wice-Jurczyce	6
+180	Zabrodzie	6
+181	Zachowice	6
+182	Bogdaszowice	6
+183	Bielany Wroc豉wskie	7
+184	Biskupice Podg鏎ne	7
+185	Budzisz闚	7
+186	Chrzan闚	7
+187	Cieszyce	7
+188	Dobkowice	7
+189	Domas豉w	7
+190	Damianowice	7
+191	Jaszowice	7
+192	Kr鏊ikowice	7
+193	Ksi璕inice	7
+194	Kuklice	7
+195	Kobierzyce	7
+196	Magnice	7
+197	Ma逝sz闚	7
+198	Nowiny	7
+199	Owsianka - B隕i	7
+200	Pe販zyce	7
+201	Pustk闚 真rawski	7
+202	Rac豉wice Wielkie	7
+203	Rolantowice	7
+204	瞛a	7
+205	Solna	7
+206	Szczepankowice	7
+207	Tyniec Ma造	7
+208	Krzy穎wice-Wierzbica	7
+209	Wierzbice	7
+210	Wysoka	7
+211	疾rniki Ma貫	7
+212	真rawice	7
+213	Pustk闚 Wilczkowski	7
+214	Tyniec N/瞛�	7
+215	G鏎ka	8
+216	Sob鏒ka	8
+217	Strzebl闚	8
+218	篹a	8
+219	B璠kowice	8
+220	Garncarsko	8
+221	Kryszta這wice	8
+222	Ksi璕inice Ma貫	8
+223	Kun闚	8
+224	Micha這wice gm.Sob鏒ka	8
+225	Miros豉wice	8
+226	Nas豉wice	8
+227	Okulice	8
+228	Olbrachtowice	8
+229	Przezdrowice	8
+230	R瘯闚	8
+231	Rog闚 Sob鏂ki	8
+232	Siedlakowice	8
+233	Stary Zamek	8
+234	Strach闚	8
+235	Strzegomiany	8
+236	Sulistrowice	8
+237	Sulistrowiczki	8
+238	i靖niki	8
+239	Wojnarowice	8
+240	疾rzuszyce	8
+241	Siechnice	9
+242	Prawocin	9
+243	Biestrzyk闚	9
+244	Blizanowice-Trestno	9
+245	Bogus豉wice	9
+246	Groblice	9
+247	Grodzisz闚	9
+248	Iwiny	9
+249	Kotowice	9
+250	ㄆkaszowice	9
+251	Mokry Dw鏎	9
+252	Ozorzyce	9
+253	Radomierzyce	9
+254	Radwanice	9
+255	Smardz闚	9
+256	Sul璚in-Szostakowice	9
+257	Sulim闚	9
+258	i皻a Katarzyna	9
+259	Zacharzyce	9
+260	Z瑿ice	9
+261	疾rniki Wroc豉wskie	9
+262	Bogun闚	10
+263	Bratowice	10
+264	Brzeie	10
+265	Galowice	10
+266	Jakson闚	10
+267	Jaros豉wice	10
+268	Karwiany-Komorowice	10
+269	Krajk闚	10
+270	M璠堯w	10
+271	Milejowice	10
+272	Mnichowice	10
+273	Nowojowice	10
+274	Nowy esz闚	10
+275	Okrzeszyce	10
+276	Pasterzyce	10
+277	Polakowice	10
+278	Przec豉wice	10
+279	Rac豉wice Ma貫	10
+280	Rynakowice	10
+281	Rzeplin	10
+282	Stary esz闚	10
+283	Suchy Dw鏎	10
+284	Szukalice	10
+285	Tur闚	10
+286	W璕ry	10
+287	Wilczk闚	10
+288	Wilkowice	10
+289	Wojkowice	10
+290	疾rniki Wielkie	10
+291	草rawina	10
+292	Bogus豉wice	11
+293	Boguszyce	11
+294	Brzezinka	11
+295	Bystre	11
+296	Ciee	11
+297	D鉉rowa	11
+298	Gr瑿oszyce	11
+299	Jenkowice	11
+300	Krzeczyn	11
+301	Ligota Ma豉	11
+302	Ligota Polska	11
+303	Ligota Wielka	11
+304	Niecisz闚	11
+305	Nowa Ligota	11
+306	Nowoszyce	11
+307	Osada Lea	11
+308	Ostrowina	11
+309	Piszkawa	11
+310	Poniatowice	11
+311	Smardz闚	11
+312	Smolna	11
+313	Soko這wice	11
+314	Spalice	11
+315	ierzna	11
+316	Wszechi皻e	11
+317	Wyszogr鏚	11
+318	Zarzysko	11
+319	Zimnica	11
+320	Syc闚	12
+321	Biskupice	12
+322	Dro速owice	12
+323	Dzia這sza	12
+324	Gaszowice	12
+325	Komor闚	12
+326	Nowy Dw鏎	12
+327	Stradomia Wierzchnia	12
+328	iz闚	12
+329	Szczodr闚	12
+330	Wielowie�	12
+331	Wioska	12
+332	Zawada	12
+333	Twardog鏎a	13
+334	Bukowinka	13
+335	Che連t闚	13
+336	Che連t闚ek	13
+337	Domas豉wice	13
+338	Dr鉚闚	13
+339	Drogoszowice	13
+340	Dro盥輳cin	13
+341	Goszcz	13
+342	Gola Wielka	13
+343	Grabowno Ma貫	13
+344	Grabowno Wielkie	13
+345	Kuia Goszcza雟ka	13
+346	ζzisko	13
+347	Moszyce	13
+348	Nowa Wie� Goszcz.	13
+349	Olsz闚ka	13
+350	S鉅ro篡ce	13
+351	Sosn闚ka	13
+352	D鉉rowa	13
+353	Lucie�	14
+354	Oleica	14
+355	Rataje	14
+356	W鉅o造	14
+357	Bartk闚	15
+358	Bia貫 B這to	15
+359	Dobra	15
+360	Dobroszyce	15
+361	Dobrze�	15
+362	ㄆczyna Wielka	15
+363	Malerz闚	15
+364	M瘯arzowice	15
+365	Miodary	15
+366	Nowica	15
+367	Nowosiedlice	15
+368	Sadk闚	15
+369	Siekierowice	15
+370	Strzelce	15
+371	Bierut闚	16
+372	Gorzes豉w	16
+373	Jemielna	16
+374	Karwiniec	16
+375	Kijowice	16
+376	Kruszowice	16
+377	Paczk闚	16
+378	Posadowice	16
+379	Radzieszyn	16
+380	S靖ok	16
+381	Solniki Ma貫	16
+382	Solniki Wielkie	16
+383	Stronia	16
+384	Strza趾owa	16
+385	Wabienice	16
+386	Zawidowice	16
+387	Zbytowa	16
+388	Dalborowice	17
+389	Dziadowa K這da	17
+390	Dziad闚 Most	17
+391	Go喚bice	17
+392	Gronowice	17
+393	Lipka	17
+394	Mi這wice	17
+395	Radzowice	17
+396	Stradomia Dolna	17
+397	Mi璠zyb鏎z	18
+398	B隕闚	18
+399	Bukowina Sycowska	18
+400	Dzies豉wice	18
+401	Ha責rychowice	18
+402	Kamie�	18
+403	Klon闚	18
+404	Krasz闚	18
+405	Kr鏊ewska Wola	18
+406	Ligota Rybi雟ka	18
+407	Niwki Kraszowskie	18
+408	Niwki Ksi嘀璚e	18
+409	Ose	18
+410	Oska Pi豉	18
+411	Bolech闚	19
+412	Bystrzyca	19
+413	Chwalibo篡ce	19
+414	Drzemlikowice	19
+415	Ga�	19
+416	Gaj O豉wski	19
+417	Godzikowice	19
+418	Godzinowice	19
+419	Jaczkowice	19
+420	Jankowice	19
+421	Jankowice Ma貫	19
+422	Lizawice	19
+423	Marcinkowice	19
+424	Marszowice	19
+425	Maszk闚	19
+426	Mi這n闚	19
+427	Niemil	19
+428	Niwnik	19
+429	Oleica Ma豉	19
+430	Osiek	19
+431	Owczary	19
+432	Psary	19
+433	Siecieborowice	19
+434	Siedlce	19
+435	Sobocisko	19
+436	Stanowice	19
+437	Stary G鏎nik	19
+438	Stary Otok	19
+439	inawa	19
+440	inawa Polska	19
+441	Zabardowice	19
+442	Zakrz闚	19
+443	Brzezimierz	20
+444	Chwastnica	20
+445	Danielowice	20
+446	Domani闚	20
+447	G瘰ice	20
+448	Gostkowice	20
+449	Goszczyna	20
+450	Grodziszowice	20
+451	Jank闚	20
+452	Ko鎍zyce	20
+453	Kuchary	20
+454	Kurz靖kowice	20
+455	Pe販zyce	20
+456	Piskorz闚	20
+457	Piskorz闚ek	20
+458	Polwica	20
+459	Rad這wice	20
+460	Raduszkowice	20
+461	Skrzypnik	20
+462	Swojk闚	20
+463	Teodor闚	20
+464	Wierzbno	20
+465	Wyszkowice	20
+466	Nowy G鏎nik	21
+467	Nowy Otok	21
+468	O豉wa	21
+469	Jelcz	22
+470	Laskowice	22
+471	Biskupice	22
+472	Brzezinki	22
+473	Chwa這wice	22
+474	D瑿ina	22
+475	Dziuplina	22
+476	Gr璠zina	22
+477	Kopalina	22
+478	�g	22
+479	Mi這cice	22
+480	Mi這cice Ma貫	22
+481	Mi這szyce	22
+482	Minkowice O豉wskie	22
+483	Nowy Dw鏎	22
+484	Piekary	22
+485	W鎩cice	22
+486	Bia這brzezie	23
+487	B這tnica	23
+488	Brochocinek	23
+489	Czerwieniec	23
+490	Go這stowice	23
+491	G鏎ka Sobocka	23
+492	Grzegorz闚	23
+493	Janowiczki	23
+494	Karczyn	23
+495	Komorowice	23
+496	Kondratowice	23
+497	Kowalskie	23
+498	Ksi璕inice Wielkie	23
+499	Lipowa-Sadowice	23
+500	Malesz闚	23
+501	Podgaj	23
+502	Prusy	23
+503	Stach闚	23
+504	Strach闚	23
+505	Zarzyca	23
+506	疾lowice	23
+507	Bartoszowa	24
+508	Boguszyce	24
+509	Boreczek	24
+510	Borek Strzeli雟ki	24
+511	Bor闚	24
+512	Brzezica	24
+513	Brzoza	24
+514	G這wnin	24
+515	Jaksin	24
+516	Jelenin	24
+517	K瘼ino	24
+518	Koj璚in	24
+519	Kr璚zk闚	24
+520	Kurcz闚	24
+521	Lud闚 零ki	24
+522	Ma鎍zyce	24
+523	Micha這wice	24
+524	Opatowice	24
+525	Piotrk闚 Borowski	24
+526	Rochowice	24
+527	Siemian闚	24
+528	Stogi	24
+529	Suchowice	24
+530	iniobr鏚	24
+531	Zielenice	24
+532	Strzelin	25
+533	Bia造 Koi馧	25
+534	Biedrzych闚	25
+535	Bierzyn	25
+536	Bro瞠c	25
+537	Chociwel	25
+538	Cz瘰zyce	25
+539	Dankowice	25
+540	Dobrogoszcz	25
+541	G瑿czyce	25
+542	G瑿ice	25
+543	G瘰iniec	25
+544	G喚boka	25
+545	Goi璚ice	25
+546	G鏎zec	25
+547	Karsz闚	25
+548	Karsz闚ek	25
+549	Kazan闚	25
+550	Krzepice	25
+551	Kuropatnik	25
+552	Lud闚 Polski	25
+553	Mikosz闚	25
+554	Muchowiec	25
+555	Nieszkowice	25
+556	Nowolesie	25
+557	P璚z	25
+558	Piotrowice	25
+559	P豉wna	25
+560	Skoroszowice	25
+561	Strzeg闚	25
+562	Szczawin	25
+563	Szczodrowice	25
+564	Trzeie	25
+565	Warkocz	25
+566	W預olnica	25
+567	疾leik	25
+568	D瑿niki	25
+569	Cierpice	26
+570	Dobrosz闚	26
+571	Dzierzkowa	26
+572	Jagielnica	26
+573	Jagielno-Samborowice	26
+574	Jeg這wa	26
+575	Karnk闚	26
+576	Konary	26
+577	Krzywina	26
+578	Mi這cice	26
+579	Mnik闚	26
+580	Ostr篹na	26
+581	Przeworno	26
+582	Roman闚-Krasiewice	26
+583	Ro積闚	26
+584	Samborowiczki	26
+585	Sarby	26
+586	Stru篡na-Kasz闚ka	26
+587	Wi頊闚	27
+588	Bry堯w	27
+589	Bry堯wek	27
+590	Cz瘰tocice	27
+591	Gu堯w	27
+592	Janowo	27
+593	Jawor闚	27
+594	J璠rzychowice	27
+595	Jutrzyna	27
+596	Kalinowa	27
+597	K這s闚	27
+598	Kowal闚	27
+599	Krajno	27
+600	Ksi篹yce	27
+601	Kucharzowice	27
+602	Kur闚	27
+603	υjowice	27
+604	Miechowice O豉wskie	27
+605	Oo	27
+606	Stary Wi頊闚	27
+607	Wawrz璚ice	27
+608	Wawrzysz闚	27
+609	Witowice	27
+610	Wyszonowice	27
+611	Zborowice	27
+612	Trzebnica	28
+613	B璠kowo	28
+614	Biedaszk闚 Ma造	28
+615	Biedaszk闚 Wielki	28
+616	Blizocin	28
+617	Brochocin	28
+618	Brzezie	28
+619	Brzyk闚	28
+620	Cerekwica	28
+621	Domanowice	28
+622	Drosz闚	28
+623	Janisz闚	28
+624	Jaszyce	28
+625	Jainy	28
+626	Kobylice	28
+627	Koczurki	28
+628	Komorowo	28
+629	Komor闚ko	28
+630	Ksi璕inice	28
+631	Kuiczysko	28
+632	Ligota	28
+633	Malcz闚	28
+634	Ma逝szyn	28
+635	Marcinowo	28
+636	Mas這wiec	28
+637	Mas堯w	28
+638	Nowy Dw鏎	28
+639	Rasz闚	28
+640	Rzepotowice	28
+641	Skorosz闚	28
+642	i靖niki	28
+643	Szczytkowice	28
+644	Tacz闚 Ma造	28
+645	Tacz闚 Wielki	28
+646	Ujeziec Wielki	28
+647	W璕rzyn闚	28
+648	Bolein	28
+649	G逝ch闚 G鏎ny	28
+650	Koniowo	28
+651	Piersno	28
+652	Skarszyn	28
+653	Ujeziec Ma造	28
+654	Oborniki 零kie	29
+655	Bagno	29
+656	Borkowice	29
+657	Gol璠zin闚	29
+658	Jary	29
+659	Kotowice	29
+660	Kowale	29
+661	Kuraszk闚	29
+662	Lubn闚	29
+663	Morz璚in Ma造	29
+664	Morz璚in Wielki	29
+665	Osolin	29
+666	Paniowice	29
+667	P璕闚	29
+668	Piekary	29
+669	Przec豉wice	29
+670	Rois豉wice	29
+671	Siemianice	29
+672	Uraz	29
+673	Wielka Lipa-Osola	29
+674	Wilczyn	29
+675	Zaj鉍zk闚	29
+676	Prusice	30
+677	Bor闚	30
+678	Brzeo	30
+679	Budzicz	30
+680	Chodlewko	30
+681	D瑿nica	30
+682	Gola	30
+683	G鏎owo	30
+684	Jagoszyce	30
+685	Kaszyce Wielkie	30
+686	Kopaszyn	30
+687	Kosinowo	30
+688	Kroina Ma豉	30
+689	Kroina Wielka	30
+690	Ligotka	30
+691	Ligota Strupi雟ka	30
+692	Paw堯w Trzebnicki	30
+693	P瘯szyn	30
+694	Pietrowice Ma貫	30
+695	Piotrkowice	30
+696	Skokowa	30
+697	Strupina	30
+698	ierz闚	30
+699	Raszowice	30
+700	Wszemir闚	30
+701	Wilkowa Ma豉	30
+702	Wilkowa Wielka	30
+703	Zakrzewo	30
+704	Budczyce	31
+705	Ciel皻niki	31
+706	Czachowo	31
+707	Czesz闚	31
+708	G逝ch闚 Dolny	31
+709	Grochowa	31
+710	Ka這wice	31
+711	Ludgierzowice	31
+712	Pomianowice	31
+713	Mi這nowice	31
+714	Niedary	31
+715	P璚isz闚	31
+716	Prawocice	31
+717	Rad堯w	31
+718	Rz璠ziszowice	31
+719	S璠zice	31
+720	Skotniki	31
+721	Pstrzejowice	31
+722	Sucha Wielka	31
+723	Tarnowiec	31
+724	Zawonia	31
+725	Z這t闚	31
+726	Kryniczno	32
+727	Krzy瘸nowice	32
+728	Ligota Pi瘯na	32
+729	Machnice	32
+730	Malin	32
+731	Mienice	32
+732	Ozorowice	32
+733	Pierwosz闚	32
+734	Piotrkowiczki	32
+735	Psary	32
+736	Rogo�	32
+737	Strzesz闚	32
+738	Szewce	32
+739	Szyman闚	32
+740	Wisznia Ma豉	32
+741	Wysoki Koi馧	32
+742	Cienin	32
+743	Biskupice	32
+744	Rak闚	32
+745	痂igr鏚	33
+746	Barkowo	33
+747	Borek	33
+748	Borz璚in	33
+749	Bychowo	33
+750	Chodlewo	33
+751	D瑿no	33
+752	Dobros豉wice	33
+753	Garbce	33
+754	Gatka	33
+755	Gr鉅zik	33
+756	Kanclerzowice	33
+757	Karnice	33
+758	Kaszyce Milickie	33
+759	K璠zie	33
+760	Kliszkowice	33
+761	Korze雟ko	33
+762	Ksi嘀璚a Wie�	33
+763	Laskowa	33
+764	ζpczyce	33
+765	Morz璚ino	33
+766	Osiek	33
+767	Powidzko	33
+768	Przedkowice	33
+769	Przywsie	33
+770	Radzi鉅z	33
+771	Ruda 痂igrodzka	33
+772	Sanie	33
+773	W璕lewo	33
+774	痂igr鏚ek	33
+775	Niezgoda	33
