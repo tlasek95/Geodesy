@@ -339,7 +339,7 @@ CREATE TRIGGER TR_jobFinishedDate ON [dbo].[all_jobs]
 		SET NOCOUNT ON;
 			IF UPDATE (jobEndedDate)
 				BEGIN
-					UPDATE all_jobs SET [status] = 'ZAKOÑCZONE'
+					UPDATE all_jobs SET [status] = 'ZAKONCZONE'
 					WHERE [ID] IN (SELECT ID FROM inserted)
 					PRINT 'Praca zostala zakonczona!'
 				END
@@ -406,20 +406,206 @@ ALTER TRIGGER TR_sgk_promotion ON [dbo].[employees]
 GO
 
 
+-------------------- PROCEDURY SK£ADOWANE
 
--------------------- WYPE£NIANIE TABEL - za pomoc¹ BULK INSERT z pliku tekstowego
+-- tworzenie nowego zlecenia
 
-BULK INSERT Geodesy.dbo.county
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\county.txt'
-WITH (
-	FIRSTROW = 2
-	,CODEPAGE = 1250
-	,ROWTERMINATOR = '\n'
-)
+CREATE PROCEDURE p_newJob
+@tznum nvarchar(50)
+,@distId int
+,@jobTypeId int
+,@area int
+,@length int
+,@axles int
+,@custId int
+,@status nvarchar(50)
+AS
+BEGIN
+	INSERT INTO [dbo].[all_jobs] ([TZnumber], [districtID], [jobTypeID], [area], [length], [noOfAxles], [customerID], [jobRecievedDate], [status], [jobEndedDate])
+		VALUES (@tznum, @distId, @jobTypeId, @area, @length, @axles, @custId, GETDATE(), @status, NULL) 
+END
+GO
+--EXEC p_newJob N'GK.6640.2317.0201', 314, 1, 20, NULL, NULL, 1,  N'ZGLOSZONE DO ODGIK'
+
+-- wyswietlenie niezaplaconych faktur
+
+CREATE PROCEDURE p_unpaidFVs
+AS
+BEGIN
+	SELECT c.companyName AS Nazwa_Firmy, a.TZnumber AS Nr_Roboty, j.jobType AS Rodzaj_Zlecenia, p.cost AS Cena, p.FVdate AS Data_wystawienia_FV
+	FROM payments AS p
+	JOIN customers AS c ON (c.ID = p.customerID)
+	JOIN all_jobs AS a ON (a.ID = p.jobID)
+	JOIN job_type AS j ON (j.ID = a.jobTypeID)
+	WHERE p.paymentDate IS NULL
+	ORDER BY p.FVdate DESC
+END
+GO
+--EXEC p_unpaidFVs
+
+-- wyswietlenie prac i przydzielonych do nich pracownikow oraz wyswietlenie ilosci prac przydzielonych do pracownika
+
+CREATE PROCEDURE p_jobAssignments
+AS
+BEGIN
+	SELECT a.TZnumber AS Nr_Roboty, t.jobType AS Rodzaj_Zlecenia, e.name AS Imie, e.lastName AS Nazwisko, e.position AS Stanowisko 
+	FROM job_assignments AS j
+	JOIN employees AS e ON (e.ID = j.employeeID)
+	RIGHT JOIN all_jobs AS a ON (a.ID = j.jobID)
+	JOIN job_type as t ON (t.ID = a.jobTypeID)
+	ORDER BY a.ID
+
+	SELECT e.name AS Imie, e.lastName AS Nazwisko, COUNT(j.employeeID) AS Ilosc_przydzielonych_prac FROM job_assignments AS j
+	RIGHT JOIN employees AS e ON (e.ID = j.employeeID)
+	GROUP BY e.name, e.lastName
+	ORDER BY COUNT(j.employeeID) DESC
+END
+GO
+--EXEC p_jobAssignments
+
+-- wyswietlenie ilosci nadgodzin w danym miesiacu oraz kwote do zaplaty za nadgodziny
+
+CREATE PROCEDURE p_extraTimeMonthly
+@month int
+AS
+BEGIN
+	SELECT e.name AS Imie, e.lastName AS Nazwisko, SUM(hours) AS Liczba_nadgodzin_w_miesiacu, (SUM(hours)*e.extraTimeWage) AS Naleznosc 
+	FROM extra_time AS et
+	JOIN employees AS e ON (e.ID = et.employeeID)
+	WHERE @month = (SELECT MONTH(et.date))
+	GROUP BY e.name, e.lastName, e.extraTimeWage
+	ORDER BY SUM(et.hours) DESC
+END
+GO
+--EXEC p_extraTimeMonthly 12
+
+-- wyswietlenie szybkiego podgladu statusu aktywnych zlecen
+	
+CREATE PROCEDURE p_quickJobStatusView
+AS
+BEGIN
+	SELECT a.ID, a.TZnumber, a.jobRecievedDate, j.jobType, a.status FROM all_jobs AS a
+	JOIN job_type AS j ON (j.ID = a.jobTypeID)
+	WHERE status != N'ZAKONCZONE'
+END
+GO
+--EXEC p_quickJobStatusView
+
+
+
+-------------------- FUNKCJE
+
+-- obliczenie sumy wystawionych faktur w danym miesiacu
+
+CREATE FUNCTION f_sumFVsMonthly (@month int)
+RETURNS money
+AS
+BEGIN
+	DECLARE @sumFV money
+	SELECT @sumFV = SUM(cost) FROM payments
+	WHERE @month = DATEPART(month, FVdate) 
+
+	RETURN @sumFV
+END
+GO
+--SELECT dbo.f_sumFVsMonthly (12) AS Sumaryczna_kwota_faktur
+
+-- obliczenie pensji pracownikow wraz z nadgodzinami w danym miesiacu
+
+CREATE FUNCTION f_salaryMonthly (@month int)
+RETURNS money
+AS
+BEGIN
+	DECLARE @sumET money
+	DECLARE @sumSalary money
+
+	;WITH CTE AS
+	(
+	SELECT (SUM(hours)*e.extraTimeWage) AS extraTimeSum FROM extra_time AS et
+	JOIN employees AS e ON (e.ID = et.employeeID)
+	WHERE @month = (SELECT MONTH(et.date))
+	GROUP BY e.ID, e.extraTimeWage
+	)
+	SELECT @sumET = SUM(CTE.extraTimeSum) FROM CTE
+
+	SELECT @sumSalary = SUM(salary) FROM employees
+	
+	RETURN @sumET + @sumSalary
+END
+GO
+--SELECT dbo.f_salaryMonthly (12)
+
+-- wyœwietlenie zarobku w danym mieisiacu (kwota z faktur - kwota pensji pracownikow)
+
+SELECT dbo.f_sumFVsMonthly (12)- dbo.f_salaryMonthly (12) AS Zarobek
 GO
 
+
+
+--------------------- WIDOKI
+
+-- widok zawierajacy pelna informacje o aktualnych zleceniach
+
+CREATE VIEW v_activeJobsInfo
+AS
+SELECT DISTINCT a.ID, a.TZnumber AS TZ, c.name AS Powiat, b.name AS Gmina, d.name AS Obreb, jt.jobType AS Rodzaj_Zlecenia, 
+a.area AS Zakres, a.length AS Dlugosc_Przewodu, a.noOfAxles AS Ilosc_Osi, cu.companyName AS Zleceniodawca, a.jobRecievedDate AS Data_zlecenia, a.status, 
+(SELECT lastName FROM employees 
+	WHERE ID = (SELECT TOP 1 ja.employeeID FROM job_assignments AS ja 
+					WHERE ja.jobID = a.ID  ORDER BY ja.employeeID ASC)) AS Pracownik1,
+CASE
+		WHEN ((SELECT COUNT(employeeID) FROM job_assignments 
+					WHERE jobID = a.ID GROUP BY jobID) > 1) 
+			
+		THEN (SELECT lastName from employees 
+					WHERE ID = (SELECT TOP 1 ja.employeeID FROM job_assignments AS ja 
+									WHERE ja.jobID = a.ID ORDER BY ja.employeeID DESC)) 
+		ELSE NULL
+
+END AS Pracownik2
+
+FROM all_jobs AS a
+
+JOIN district AS d ON (d.ID = a.districtID)
+JOIN borough AS b ON (b.ID = d.boroughID)
+JOIN county AS c ON (c.ID = b.countyID)
+JOIN job_type AS jt ON (jt.ID = a.jobTypeID)
+JOIN customers AS cu ON (cu.ID = a.customerID)
+
+WHERE a.status != 'ZAKONCZONE'
+
+GO
+--SELECT * FROM dbo.v_activeJobsInfo
+
+-- archiwum - wyswietlenie prac zakonczonych
+
+CREATE VIEW v_archievedJobsInfo
+AS
+SELECT DISTINCT a.ID, a.TZnumber AS TZ, c.name AS Powiat, b.name AS Gmina, d.name AS Obreb, jt.jobType AS Rodzaj_Zlecenia, 
+a.area AS Zakres, a.length AS Dlugosc_Przewodu, a.noOfAxles AS Ilosc_Osi, cu.companyName AS Zleceniodawca, a.jobRecievedDate AS Data_zlecenia, 
+a.jobEndedDate AS Data_zakonczenia, p.FVnumber AS Numer_FV, p.cost AS Cena, p.paymentDate AS Data_Zaplaty
+
+
+FROM all_jobs AS a
+
+JOIN district AS d ON (d.ID = a.districtID)
+JOIN borough AS b ON (b.ID = d.boroughID)
+JOIN county AS c ON (c.ID = b.countyID)
+JOIN job_type AS jt ON (jt.ID = a.jobTypeID)
+JOIN customers AS cu ON (cu.ID = a.customerID)
+JOIN payments AS p ON (p.jobID = a.ID)
+
+WHERE a.status = 'ZAKONCZONE'
+
+GO
+--SELECT * FROM dbo.v_archievedJobsInfo
+
+
+
+--------------------- WYPE£NIANIE TABEL - za pomoc¹ kaluzuli BULK INSERT
+
 BULK INSERT Geodesy.dbo.borough
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\borough.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\borough.txt'
 WITH (
 	FIRSTROW = 2
 	,CODEPAGE = 1250
@@ -428,7 +614,7 @@ WITH (
 GO
 
 BULK INSERT Geodesy.dbo.district
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\district.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\district.txt'
 WITH (
 	FIRSTROW = 2
 	,CODEPAGE = 1250
@@ -437,7 +623,7 @@ WITH (
 GO
 
 BULK INSERT Geodesy.dbo.job_type
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\job_type.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\job_type.txt'
 WITH (
 	FIRSTROW = 2
 	,CODEPAGE = 1250
@@ -446,7 +632,7 @@ WITH (
 GO
 
 BULK INSERT Geodesy.dbo.all_jobs
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\jobs.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\jobs.txt'
 WITH (
 	FIRSTROW = 2
 	,ROWTERMINATOR ='\n'
@@ -454,7 +640,7 @@ WITH (
 GO
 
 BULK INSERT Geodesy.dbo.job_assignments
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\job_assignment.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\job_assignment.txt'
 WITH (
 	FIRSTROW = 2
 	,ROWTERMINATOR ='\n'
@@ -462,7 +648,7 @@ WITH (
 GO
 
 BULK INSERT Geodesy.dbo.customers
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\customers.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\customers.txt'
 WITH (
 	FIRSTROW = 2
 	,CODEPAGE = 1250
@@ -471,7 +657,7 @@ WITH (
 GO
 
 BULK INSERT Geodesy.dbo.payments
-FROM 'D:\INFORMATYKA\NAUKA SQL\Geodesy\insertData\payments.txt'
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\payments.txt'
 WITH (
 	FIRSTROW = 2
 	,CODEPAGE = 1250
