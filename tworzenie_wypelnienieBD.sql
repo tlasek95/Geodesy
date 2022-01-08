@@ -623,6 +623,7 @@ WITH (
 )
 GO
 
+
 BULK INSERT Geodesy.dbo.district
 FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\district.txt'
 WITH (
