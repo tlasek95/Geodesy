@@ -566,11 +566,11 @@ END AS Pracownik2
 
 FROM all_jobs AS a
 
-JOIN district AS d ON (d.ID = a.districtID)
-JOIN borough AS b ON (b.ID = d.boroughID)
-JOIN county AS c ON (c.ID = b.countyID)
-JOIN job_type AS jt ON (jt.ID = a.jobTypeID)
-JOIN customers AS cu ON (cu.ID = a.customerID)
+LEFT JOIN district AS d ON (d.ID = a.districtID)
+LEFT JOIN borough AS b ON (b.ID = d.boroughID)
+LEFT JOIN county AS c ON (c.ID = b.countyID)
+LEFT JOIN job_type AS jt ON (jt.ID = a.jobTypeID)
+LEFT JOIN customers AS cu ON (cu.ID = a.customerID)
 
 WHERE a.status != 'ZAKONCZONE'
 
@@ -588,12 +588,12 @@ a.jobEndedDate AS Data_zakonczenia, p.FVnumber AS Numer_FV, p.cost AS Cena, p.pa
 
 FROM all_jobs AS a
 
-JOIN district AS d ON (d.ID = a.districtID)
-JOIN borough AS b ON (b.ID = d.boroughID)
-JOIN county AS c ON (c.ID = b.countyID)
-JOIN job_type AS jt ON (jt.ID = a.jobTypeID)
-JOIN customers AS cu ON (cu.ID = a.customerID)
-JOIN payments AS p ON (p.jobID = a.ID)
+LEFT JOIN district AS d ON (d.ID = a.districtID)
+LEFT JOIN borough AS b ON (b.ID = d.boroughID)
+LEFT JOIN county AS c ON (c.ID = b.countyID)
+LEFT JOIN job_type AS jt ON (jt.ID = a.jobTypeID)
+LEFT JOIN customers AS cu ON (cu.ID = a.customerID)
+LEFT JOIN payments AS p ON (p.jobID = a.ID)
 
 WHERE a.status = 'ZAKONCZONE'
 
@@ -604,11 +604,21 @@ GO
 
 --------------------- WYPE£NIANIE TABEL - za pomoc¹ kaluzuli BULK INSERT
 
+BULK INSERT Geodesy.dbo.county
+FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\county.txt'
+WITH (
+	FIRSTROW = 2
+	,CODEPAGE = '65001'
+	,ROWTERMINATOR = '\n'
+)
+GO
+
+
 BULK INSERT Geodesy.dbo.borough
 FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\borough.txt'
 WITH (
 	FIRSTROW = 2
-	,CODEPAGE = 1250
+	,CODEPAGE = '65001'
 	,ROWTERMINATOR = '\n'
 )
 GO
@@ -617,7 +627,7 @@ BULK INSERT Geodesy.dbo.district
 FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\district.txt'
 WITH (
 	FIRSTROW = 2
-	,CODEPAGE = 1250
+	,CODEPAGE = '65001'
 	,ROWTERMINATOR = '\n'
 )
 GO
@@ -626,7 +636,7 @@ BULK INSERT Geodesy.dbo.job_type
 FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\job_type.txt'
 WITH (
 	FIRSTROW = 2
-	,CODEPAGE = 1250
+	,CODEPAGE = '65001'
 	,ROWTERMINATOR = '\n'
 )
 GO
@@ -651,7 +661,7 @@ BULK INSERT Geodesy.dbo.customers
 FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\customers.txt'
 WITH (
 	FIRSTROW = 2
-	,CODEPAGE = 1250
+	,CODEPAGE = '65001'
 	,ROWTERMINATOR = '\n'
 )
 GO
@@ -660,7 +670,7 @@ BULK INSERT Geodesy.dbo.payments
 FROM 'D:\INFORMATYKA\NAUKA_SQL\geodesy_repo\payments.txt'
 WITH (
 	FIRSTROW = 2
-	,CODEPAGE = 1250
+	,CODEPAGE = '65001'
 	,ROWTERMINATOR = '\n'
 )
 GO
